@@ -1,3 +1,22 @@
+# Contents
+- [General Formatting](#general-formatting)
+    - [Case](#case)
+    - [Indentation](#indentation)
+    - [White Space](#white-space)
+- [Query Structure](#query-structure)
+    - [Root Keywords Left-Aligned](#root-keywords-left-aligned)
+    - [Listing Fields](#listing-fields)
+- [Naming and Aliasing](#naming-and-aliasing)
+    - [Explicit Aliasing](#explicit-aliasing)
+    - [Meaningful Aliases](#meaningful-aliases)
+    - [Naming for Data Type](#naming-for-data-type)
+- [Joins and Logic](#joins-and-logic)
+    - [Explicit Joins](#explicit-joins)
+    - [Join Conditions](#join-conditions)
+    - [CTEs > Subqueries](#ctes--subqueries)
+    - [Things to Avoid](#things-to-avoid)
+    - [Examples](#examples)
+
 # General Formatting
 
 ## Case
@@ -39,7 +58,7 @@ FROM
 - Use spaces around operators (`=`, `+`, `>`, etc.).
 - One empty line between distinct CTEs or major logical blocks.
 
-## Query Structure
+# Query Structure
 
 ## Root Keywords Left-Aligned
 
@@ -80,7 +99,7 @@ FROM
 ...
 ```
 
-**Why?** Trailing commas allow for alignment of fields across all lines and make it easy to comment out any field without causing a syntax violation.
+**Why?** Trailing commas allow for alignment of fields across all lines and make it easy to comment out any field without causing a syntax violation. They also provide a cleaner `git diff` as a new field can be inserted anywhere and is represented as a single line change (opposed to a two line change). It also allows all fields to use the same indentation, improving readability.
 
 # Naming and Aliasing
 
